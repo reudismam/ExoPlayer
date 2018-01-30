@@ -158,7 +158,7 @@ public final class Util {
    */
   public static boolean isLocalFileUri(Uri uri) {
     String scheme = uri.getScheme();
-    return TextUtils.isEmpty(scheme) || scheme.equals("file");
+    return TextUtils.isEmpty(scheme) || "file".equals(scheme);
   }
 
   /**
@@ -570,7 +570,7 @@ public final class Util {
     } else {
       timezoneShift = ((Integer.parseInt(matcher.group(12)) * 60
           + Integer.parseInt(matcher.group(13))));
-      if (matcher.group(11).equals("-")) {
+      if ("-".equals(matcher.group(11))) {
         timezoneShift *= -1;
       }
     }
